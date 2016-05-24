@@ -17,7 +17,7 @@ import codecs
 import re
 import os
 
-#Webdriver global amd property global
+#Webdriver global
 driver = ''
 
 #Path to downloads folder
