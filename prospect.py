@@ -63,7 +63,7 @@ def get_html(user, passwd, address_list):
         text_area.send_keys(address+'\n')
 
     browser.find_element_by_xpath("//*[@id=\"step2\"]/a[2]").click()
-    time.sleep(160)
+    time.sleep(30)
 
     #Move through pages and return property dictionary list from each page
     print('Saving property data...')

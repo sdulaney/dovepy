@@ -18,7 +18,7 @@ import os
 driver = ''
 
 #Path to downloads
-path_to_folder = '/users/bryan/downloads/'
+path_to_folder = 'ADD_PATH_TO_OS_DOWNLOADS_HERE'
 
 #Check if element is existant on a page
 def assert_element_exists(xpath, browser):
@@ -33,16 +33,21 @@ def login(first, last, email, location):
     print('\nLogging into LexisNexis...')
     global driver
     driver = webdriver.Chrome()
-    driver.get('https://w3.nexis.com/clients/marcusmillichapregistration/')
+    driver.get('https://w3.nexis.com/clients/ADD_CLIENT_HERE/')
     time.sleep(1)
+
+    #CLIENT CONFIG 
     first = driver.find_element_by_xpath('//*[@id=\"firstName\"]')
     last  = driver.find_element_by_xpath('//*[@id=\"lastName\"]')
     email  = driver.find_element_by_xpath('//*[@id=\"open_one\"]')
     location = Select(driver.find_element_by_xpath('//*[@id=\"location\"]'))
     location.select_by_visible_text('Newport Beach')
-    first.send_keys('Bryan')
-    last.send_keys('Wheeler')
-    email.send_keys('bryan.wheeler@marcusmillichap.com')
+    
+    #ADD USER LOGIN INFO
+    first.send_keys('')
+    last.send_keys('')
+    email.send_keys('')
+
     time.sleep(2)
     driver.find_element_by_xpath('//*[@id=\"content\"]/div[2]/div/form/ol/li[6]/input[1]').click()
     driver.switch_to_frame('mainFrame')

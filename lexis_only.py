@@ -5,7 +5,7 @@ import lexis_2
 from Property import Property
 
 def main():
-    file_path = '/users/bryan/desktop/test.xlsx'
+    file_path = '/PATH_TO_PROPERTY_LIST'
 
     prop_list = []
 
@@ -30,7 +30,7 @@ def main():
     first_names = data.get_column_data('first_name', file_path)
 
 
-    lexis_2.login('Bryan', 'Wheeler', 'bryan.wheeler@marcusmillichap.com', 'Newport Beach')
+    lexis_2.login('USER_FIRST', 'USER_LAST', 'LEXIS_ADDITIONAL', 'LOCATION')
 
     for i in range(len(addresses)):
         prop = Property(ids[i])

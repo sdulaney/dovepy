@@ -14,7 +14,7 @@ def run_script():
     
     #VARS - to be updated later..only for prototyping 
     #Path to .xlsx file build 
-    file_path = '/users/bryan/desktop/rea_holder.xlsx'
+    file_path = 'PATH TO BUILD FILE'
 
     #Write structure for REA to Excel mapping (column letter : field)
     property_write_fields = [
@@ -30,7 +30,7 @@ def run_script():
     #Add control to fork program depending on provided list or REA pull?
 
     #Get user and SQL server connection to REA database. Comment out these lines to run a custom sheat
-    user = rea.get_user('Hopkins')
+    user = rea.get_user('DB_USER')
     conn = rea.get_connection(user)
 
     #Write initial .xlsx file structure according to var property_write_fields 
@@ -49,8 +49,8 @@ def run_script():
     #Start prospectnow crawl and assign property data to prop_objects. prop_objects is a nested
     #dictionary that contains property data at the key 'data_packet'.  
     #address_list = data.build_address_list(address_list, city_list, state_list, zip_code_list)
-    address_list = data.build_random_address_list(address_list, city_list, state_list, zip_code_list, 20)
-    prop_objects = prospect.get_html('jack.hopkins@marcusmillichap.com','jackputt',address_list)
+    address_list = data.build_random_address_list(address_list, city_list, state_list, zip_code_list, 25)
+    prop_objects = prospect.get_html('PROSPECT_NOW_USER','PROSPECT_PW',address_list)
     data_packet = []
     data_packet_prop = []
 
@@ -95,7 +95,7 @@ def run_script():
             property_list.append(prop)
 
     #Login to LexisNexis
-    lexis_2.login('Bryan', 'Wheeler', 'bryan.wheeler@marcusmillichap.com', 'Newport Beach')
+    lexis_2.login('LEXIS_FN', 'LEXIS_LN', 'LEXIS_ADDITIONAL', 'LEXIS_LOC')
 
     #List of dictionaries storing property data
     prop_data_list = []
@@ -238,7 +238,7 @@ def run_sheet_only():
 
     #VARS - to be updated later..only for prototyping 
     #Path to .xlsx file build 
-    file_path = '/users/bryan/desktop/prospect_holder.xlsx'
+    file_path = 'PATH_TO_FILE_BUILD'
 
 #Retrieve necessary data for prospect now scrape (format: address_1, city, state, zip_code)
     address_list = data.get_column_data('address_1', file_path)
@@ -250,7 +250,7 @@ def run_sheet_only():
     #dictionary that contains property data at the key 'data_packet'.  
     #address_list = data.build_address_list(address_list, city_list, state_list, zip_code_list)
     address_list = data.build_address_list(address_list, city_list, state_list, zip_code_list)
-    prop_objects = prospect.get_html('jack.hopkins@marcusmillichap.com','jackputt',address_list)
+    prop_objects = prospect.get_html('PROSPECT_NOW_USER','PROSPECT_PW',address_list)
     data_packet = []
     data_packet_prop = []
 
@@ -295,7 +295,7 @@ def run_sheet_only():
             property_list.append(prop)
 
     #Login to LexisNexis
-    lexis_2.login('Bryan', 'Wheeler', 'bryan.wheeler@marcusmillichap.com', 'Newport Beach')
+    lexis_2.login('LEXIS_FN', 'LEXIS_LN', 'LEXIS_ADDITIONAL', 'LEXIS_LOC')
 
     #List of dictionaries storing property data
     prop_data_list = []
@@ -376,12 +376,12 @@ def run_sheet_only():
 
 def main():
 
-    #run_script()
-    #sched = BlockingScheduler()
-    #sched.add_job(run_script, 'interval', minutes=30)
-    #sched.start()
+    run_script()
+    sched = BlockingScheduler()
+    sched.add_job(run_script, 'interval', minutes=30)
+    sched.start()
 
-    run_sheet_only()
+    #run_sheet_only()
 
 
 

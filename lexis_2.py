@@ -21,7 +21,7 @@ import os
 driver = ''
 
 #Path to downloads folder
-path_to_folder = '/users/bryan/downloads/'
+path_to_folder = '/ADD_PATH_TO_OS_DOWNLOAD_FILE_HERE'
 
 
 #Check if element on a page exists by xpath
@@ -34,7 +34,7 @@ def assert_element_exists(xpath, browser):
 
 #Reset the driver to the root page
 def reset():
-    driver.get('https://w3.nexis.com/clients/marcusmillichap/')
+    driver.get('https://w3.nexis.com/clients/ADD_CLIENT_HERE/')
 
 #Quit the browser
 def quit():
@@ -49,7 +49,7 @@ def login(first_, last_, email_, location_):
     driver = webdriver.Chrome()
 
     #Go to login page
-    driver.get('https://w3.nexis.com/clients/marcusmillichapregistration/')
+    driver.get('https://w3.nexis.com/clients/ADD_CLIENT_HERE/')
     time.sleep(1)
 
     #Set input fields
@@ -267,17 +267,17 @@ def __run_download():
             for handle in driver.window_handles:
                 driver.switch_to_window(handle)
 
-            driver.get('https://w3.nexis.com/clients/marcusmillichap/')
+            driver.get('https://w3.nexis.com/clients/ADD_CLIENT_HERE/')
 
             return contact
 
         else:
 
-            driver.get('https://w3.nexis.com/clients/marcusmillichap/')
+            driver.get('https://w3.nexis.com/clients/ADD_CLIENT_HERE/')
 
     except:
 
-        driver.get('https://w3.nexis.com/clients/marcusmillichap/')
+        driver.get('https://w3.nexis.com/clients/ADD_CLIENT_HERE/')
 
 
 
