@@ -41,7 +41,7 @@ def login(first, last, email, location):
     last  = driver.find_element_by_xpath('//*[@id=\"lastName\"]')
     email  = driver.find_element_by_xpath('//*[@id=\"open_one\"]')
     location = Select(driver.find_element_by_xpath('//*[@id=\"location\"]'))
-    location.select_by_visible_text('Newport Beach')
+    location.select_by_visible_text('OFFICE LOC')
     
     #ADD USER LOGIN INFO
     first.send_keys('')

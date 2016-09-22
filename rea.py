@@ -7,7 +7,7 @@ import pymssql
 
 #TO BE REPLACED MY JSON FILE IN HOME DIR
 user_vars = [
-    {'name':'Hopkins', 'server':'jhopkins1-win7\\rea9', 'password':'jackputt', 'user':'sa', 'database':'REA9'}
+    {'name':'_USER_', 'server':'_SERVER_', 'password':'_PW_', 'user':'_USER_', 'database':'_DB_'}
 ]
 
 #CONSTANTS
